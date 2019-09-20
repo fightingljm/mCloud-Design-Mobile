@@ -45,8 +45,7 @@ const App = (props) => (
                             props.navigation.navigate('SearchBar')
                         }}
                     >
-Button
-
+                        Button
                     </Text>
                     <Text style={styles.sectionDescription}>
             Edit
