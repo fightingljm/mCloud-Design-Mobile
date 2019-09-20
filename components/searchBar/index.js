@@ -4,17 +4,47 @@ import {
     TextInput,
     Image,
     TouchableOpacity,
+    ViewPropTypes,
 } from 'react-native'
 import { WithTheme } from '../style'
 import SearchBarStyles from './style'
+import PropTypes from 'prop-types'
 
+const func = () => {}
 const searchBigImage = require('./assets/search-big.png')
 const searchSmallImage = require('./assets/search-small.png')
 const clearImage = require('./assets/clear.png')
 
 export default class SearchBar extends React.Component {
+    static propTypes = {
+        style: ViewPropTypes.style,
+        styles: ViewPropTypes.style,
+        type: PropTypes.string,
+        defaultValue: PropTypes.string,
+        value: PropTypes.string,
+        placeholder: PropTypes.string,
+        renderSearch: PropTypes.node,
+        renderClear: PropTypes.node,
+        onSubmit: PropTypes.func,
+        onChange: PropTypes.func,
+        onFocus: PropTypes.func,
+        onBlur: PropTypes.func,
+        onClear: PropTypes.func,
+    }
     static defaultProps = {
+        style: {},
+        styles: {},
         type: 'default', // default | radius
+        defaultValue: '',
+        value: '',
+        placeholder: '',
+        renderSearch: undefined,
+        renderClear: undefined,
+        onSubmit: func,
+        onChange: func,
+        onFocus: func,
+        onBlur: func,
+        onClear: func,
     }
     constructor(props) {
         super(props)
@@ -135,6 +165,7 @@ export default class SearchBar extends React.Component {
                                     <TextInput
                                         style={[_styles[`${style_prefix}input`], style]}
                                         underlineColorAndroid="transparent"
+                                        returnKeyType="search"
                                         placeholder={placeholder}
                                         value={value}
                                         onChangeText={this.onChangeText}
