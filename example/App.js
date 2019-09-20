@@ -21,6 +21,7 @@ import {
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import ButtonBasic from '../components/button/demo/basic'
+import SearchBarBasic from '../components/searchBar/demo/basic'
 
 
 const App = (props) => (
@@ -41,7 +42,7 @@ const App = (props) => (
                     <Text
                         style={styles.sectionTitle}
                         onPress={() => {
-                            props.navigation.navigate('Button')
+                            props.navigation.navigate('SearchBar')
                         }}
                     >
 Button
@@ -125,6 +126,9 @@ const AppNavigator = createStackNavigator({
     },
     Button:{
         screen: ButtonBasic,
+    },
+    SearchBar:{
+        screen: SearchBarBasic,
     },
 })
 

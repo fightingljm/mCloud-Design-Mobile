@@ -34,6 +34,7 @@ module.exports = {
     "semi": [2,'never'],
     "react/prefer-stateless-function":0,
     "import/prefer-default-export":0,
+    "import/no-unresolved":0,
     // "babel/semi": 1,
     // "max-classes-per-file": ["error", 3],
     // "lines-between-class-members": 0,
