@@ -59,12 +59,13 @@ export default class SearchBar extends React.Component {
             focus: false,
         }
     }
-    componentWillReceiveProps(nextProps) {
-        if ('value' in nextProps) {
-            this.setState({
-                value: nextProps.value,
-            })
+    static getDerivedStateFromProps(props, state) {
+        if (props.value && props.value !== state.value) {
+            return {
+                value: props.value,
+            }
         }
+        return null
     }
     onSubmit = () => {
         const { value } = this.state

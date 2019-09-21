@@ -34,12 +34,13 @@ export default class Checkbox extends React.Component {
             checked: props.checked || props.defaultChecked || false,
         }
     }
-    componentWillReceiveProps(nextProps) {
-        if (typeof nextProps.checked === 'boolean') {
-            this.setState({
-                checked: nextProps.checked,
-            })
+    static getDerivedStateFromProps(props, state) {
+        if (typeof props.checked === 'boolean' && props.checked !== state.checked) {
+            return {
+                checked: props.checked,
+            }
         }
+        return null
     }
     onPress = () => {
         const {
