@@ -1,49 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { SearchBar } from '../..'
 
-export default class SearchBarExample extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            value: '打卡助手',
-        }
-    }
-    render() {
-        const { value } = this.state
-        return (
-            <View style={styles.warp}>
-                <Text style={styles.boldTitle}>
-                    圆角搜索框
-                </Text>
-                <Text style={styles.title}>
-                    未输入状态
-                </Text>
-                <SearchBar type="radius" placeholder="搜索" />
-                <Text style={styles.title}>
-                    初始值
-                </Text>
-                <SearchBar type="radius" defaultValue="打卡助手" />
-                <Text style={styles.boldTitle}>
-                    通栏搜索框
-                </Text>
-                <Text style={styles.title}>
-                    初始值
-                </Text>
-                <SearchBar defaultValue="打卡助手" />
-                <Text style={styles.title}>
-                    受控
-                </Text>
-                <SearchBar
-                    value={value}
-                    placeholder="搜索"
-                    onSubmit={(val) => console.log(val)}
-                    onCancel={() => this.setState({ value: '' })}
-                    onChange={(val) => this.setState({ value: val })}
-                />
-            </View>
-        )
-    }
+export default () => {
+    const [value, onChange] = useState('打卡助手')
+    return (
+        <View style={styles.warp}>
+            <Text style={styles.boldTitle}>
+                圆角搜索框
+            </Text>
+            <Text style={styles.title}>
+                未输入状态
+            </Text>
+            <SearchBar type="radius" placeholder="搜索" />
+            <Text style={styles.title}>
+                初始值
+            </Text>
+            <SearchBar type="radius" defaultValue="打卡助手" />
+            <Text style={styles.boldTitle}>
+                通栏搜索框
+            </Text>
+            <Text style={styles.title}>
+                初始值
+            </Text>
+            <SearchBar defaultValue="打卡助手" />
+            <Text style={styles.title}>
+                受控
+            </Text>
+            <SearchBar
+                value={value}
+                placeholder="搜索"
+                onSubmit={(val) => console.log(val)}
+                onCancel={() => onChange('')}
+                onChange={(val) => onChange(val)}
+            />
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

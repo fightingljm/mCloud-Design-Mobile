@@ -19,48 +19,44 @@ Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 ## Code
 
 ```jsx
-import React, { Component } from 'react';
-import {
-    View, Text, StyleSheet
-} from 'react-native';
+import React, { useState } from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 import { SearchBar } from 'mCloud-mobile';
 
-export default class Example extends Component {
-    constructor() {
-        super()
-        this.state = {
-            value: '打卡助手',
-        }
-    }
-    render() {
-        const { value } = this.state
-        return (
-            <View style={styles.warp}>
-                <Text style={styles.title}>
-                    圆角搜索框
-                </Text>
-                <SearchBar type="radius" placeholder="搜索" />
-                <Text style={styles.title}>
-                    初始值
-                </Text>
-                <SearchBar type="radius" defaultValue="打卡助手" />
-                <Text style={styles.title}>
-                    通栏搜索框 初始值
-                </Text>
-                <SearchBar defaultValue="打卡助手" />
-                <Text style={styles.title}>
-                    搜索
-                </Text>
-                <SearchBar
-                    value={value}
-                    placeholder="搜索"
-                    onSubmit={(val) => console.log(val)}
-                    onCancel={() => this.setState({ value: '' })}
-                    onChange={(val) => this.setState({ value: val })}
-                />
-            </View>
-        )
-    }
+export default () => {
+    const [value, onChange] = useState('打卡助手')
+    return (
+        <View style={styles.warp}>
+            <Text style={styles.boldTitle}>
+                圆角搜索框
+            </Text>
+            <Text style={styles.title}>
+                未输入状态
+            </Text>
+            <SearchBar type="radius" placeholder="搜索" />
+            <Text style={styles.title}>
+                初始值
+            </Text>
+            <SearchBar type="radius" defaultValue="打卡助手" />
+            <Text style={styles.boldTitle}>
+                通栏搜索框
+            </Text>
+            <Text style={styles.title}>
+                初始值
+            </Text>
+            <SearchBar defaultValue="打卡助手" />
+            <Text style={styles.title}>
+                受控
+            </Text>
+            <SearchBar
+                value={value}
+                placeholder="搜索"
+                onSubmit={(val) => console.log(val)}
+                onCancel={() => onChange('')}
+                onChange={(val) => onChange(val)}
+            />
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -73,6 +69,13 @@ const styles = StyleSheet.create({
         color: '#1F2530',
         paddingVertical: 10,
         paddingLeft: 15,
+    },
+    boldTitle: {
+        fontSize: 16,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 10,
+        fontWeight: '500',
     },
 })
 
