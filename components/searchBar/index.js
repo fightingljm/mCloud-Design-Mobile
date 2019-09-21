@@ -35,8 +35,6 @@ export default class SearchBar extends React.Component {
         style: {},
         styles: {},
         type: 'default', // default | radius
-        defaultValue: '',
-        value: '',
         placeholder: '',
         renderSearch: undefined,
         renderClear: undefined,

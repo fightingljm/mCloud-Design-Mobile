@@ -13,6 +13,9 @@ export default class SearchBarExample extends React.Component {
         const { value } = this.state
         return (
             <View style={styles.warp}>
+                <Text style={styles.boldTitle}>
+                    圆角搜索框
+                </Text>
                 <Text style={styles.title}>
                     未输入状态
                 </Text>
@@ -21,12 +24,15 @@ export default class SearchBarExample extends React.Component {
                     初始值
                 </Text>
                 <SearchBar type="radius" defaultValue="打卡助手" />
+                <Text style={styles.boldTitle}>
+                    通栏搜索框
+                </Text>
                 <Text style={styles.title}>
-                    通栏搜索框 初始值
+                    初始值
                 </Text>
                 <SearchBar defaultValue="打卡助手" />
                 <Text style={styles.title}>
-                    搜索
+                    受控
                 </Text>
                 <SearchBar
                     value={value}
@@ -50,5 +56,12 @@ const styles = StyleSheet.create({
         color: '#1F2530',
         paddingVertical: 10,
         paddingLeft: 15,
+    },
+    boldTitle: {
+        fontSize: 16,
+        color: '#1F2530',
+        paddingVertical: 10,
+        paddingLeft: 10,
+        fontWeight: '500',
     },
 })
