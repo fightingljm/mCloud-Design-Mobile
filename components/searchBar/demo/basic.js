@@ -31,7 +31,7 @@ export default () => {
                 value={value}
                 placeholder="搜索"
                 onSubmit={(val) => console.log(val)}
-                onCancel={() => onChange('')}
+                onClear={() => onChange('')}
                 onChange={(val) => onChange(val)}
             />
         </View>
