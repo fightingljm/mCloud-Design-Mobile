@@ -4,21 +4,11 @@ title: SearchBar
 sidebar_label: SearchBar
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+搜索栏
 
+## Basic Example:
 
-## Example
-
-<table>
-  
-</table>
-
-
-
-
-## Code
-
-```jsx
+```SnackPlayer name=searchBar-simple
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { SearchBar } from 'mCloud-mobile';
@@ -83,7 +73,7 @@ const styles = StyleSheet.create({
 
 
 
-## SearchBar Props
+## Props
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
@@ -95,9 +85,9 @@ const styles = StyleSheet.create({
 | onFocus | focus 事件的回调 | (val: String): void   |  无 |
 | onBlur | blur 事件的回调 | (val: String): void   |  无 |
 | onClear | 清除事件的回调 | (val: String): void   |  无 |
-| type | 默认样式（通栏）、圆角样式 | String `default | radius`   |  default |
-| renderClear | 自定义清除按钮 | ReactNode   |  `<Image source={require('./assets/clear.png')} />` |
-| renderSearch | 自定义搜索放大镜 | ReactNode   |  `<Image source={require('./assets/search-small.png')} />` |
+| type | 默认样式(default)、圆角样式(radius) | String   |  default |
+| renderClear | 自定义清除按钮 | ReactNode   |  clear Image |
+| renderSearch | 自定义搜索放大镜 | ReactNode   |  search Image |
 
 
 
