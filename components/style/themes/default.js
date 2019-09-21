@@ -34,7 +34,7 @@ export default {
     brand_wait: '#108ee9',
 
     // 边框色
-    border_color_base: '#dddddd',
+    border_color_base: '#DEDFE0',
 
     // 字体尺寸
     // ---
@@ -123,6 +123,9 @@ export default {
     list_title_height: 30,
     list_item_height_sm: 35,
     list_item_height: 44,
+
+    // checkbox
+    checkbox_item_height: 60,
 
     // input
     input_label_width: 17,       // InputItem、TextareaItem 文字长度基础值
